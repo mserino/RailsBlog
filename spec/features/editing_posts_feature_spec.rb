@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 describe 'Editing posts' do
+	let(:jack) { create(:user)}
+
 	before do
-		@post = Post.create title: 'Cool post', description: 'Wow I am so cool'
+		login_as jack
+		@post = Post.create title: 'First post', description: "Yay"
 	end
 
 	it 'can edit a post' do
