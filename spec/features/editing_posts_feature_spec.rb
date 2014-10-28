@@ -12,6 +12,7 @@ describe 'Editing posts' do
 		click_button 'Submit'
 		expect(current_path).to eq posts_path
 		expect(page).to have_content 'Changing the post'
+		expect(page).to have_content "Post successfully updated"
 		expect(page).not_to have_content 'Cool post'
 	end
 end

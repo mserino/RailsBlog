@@ -21,12 +21,14 @@ class PostsController < ApplicationController
 		@post = Post.find params[:id]
 		@post.update post_params
 		@post.save
+		flash[:notice] = "Post successfully updated"
 		redirect_to posts_path
 	end
 
 	def destroy
 		@post = Post.find params[:id]
 		@post.destroy
+		flash[:notice] = "Post successfully deleted"
 		redirect_to posts_path
 	end
 

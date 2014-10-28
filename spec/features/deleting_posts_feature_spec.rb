@@ -10,5 +10,6 @@ describe 'Deleting post' do
 		expect(page).to have_content 'First post'
 		click_link 'Delete post'
 		expect(page).not_to have_content 'First post'
+		expect(page).to have_content 'Post successfully deleted'
 	end
 end
