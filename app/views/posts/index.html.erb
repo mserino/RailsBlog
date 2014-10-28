@@ -5,10 +5,12 @@
 </head>
 <body>
 <h1>No posts yet</h1>
+<h1><%= link_to "New post", new_post_path %></h1>
 
 <% @posts.each do |post| %>
 	<h2><%= post.title %></h2>
 	<p><%= post.description %></p>
+	<p><%= link_to "Edit post", edit_post_path(post) %></p>
 <% end %>
 
 </body>
