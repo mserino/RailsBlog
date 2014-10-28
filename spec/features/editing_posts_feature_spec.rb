@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe 'Editing posts' do
 	before do
-		Post.destroy_all
 		@post = Post.create title: 'Cool post', description: 'Wow I am so cool'
 	end
 
