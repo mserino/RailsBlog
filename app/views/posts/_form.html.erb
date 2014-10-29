@@ -1,11 +1,13 @@
 <%= form_for @post, url: { action: action } do |form| %>
-
-	<%= form.label :title %>
+	<div>
+	<%= form.label :title %><br />
 	<%= form.text_field :title %>
-
-	<%= form.label :description %>
+	</div>
+	<div>
+	<%= form.label :description %><br />
 	<%= form.text_area :description %>
+	</div>
 
-	<%= form.submit "Submit" %>
+	<div><%= form.submit "Submit" %></div>
 
 <% end %>
