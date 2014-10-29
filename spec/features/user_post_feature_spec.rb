@@ -10,7 +10,7 @@ describe 'User and Post' do
 	it 'post belongs to a user' do
 		visit new_post_path
 		add_post
-		expect(page).to have_content "Posted by test@test.com"
+		expect(page).to have_content "Posted by Cindy"
 	end
 
 	def add_post
