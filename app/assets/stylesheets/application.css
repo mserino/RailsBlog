@@ -63,7 +63,13 @@ p {
 	background-attachment: fixed;
 	background-size: cover;
 }
+.nav.navbar-right a{
+	color: white !important;
+}
 
+.navbar-text {
+	color: white !important;
+}
 /* Header on scrolling 200px */
 .navbar {
 	margin-bottom: 0 !important;
