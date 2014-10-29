@@ -64,7 +64,7 @@ p {
 	background-size: cover;
 }
 
-/* Header on scrolling 300px */
+/* Header on scrolling 200px */
 .navbar {
 	margin-bottom: 0 !important;
 	background-image: url('/images/bokeh.jpg') !important;
@@ -80,6 +80,7 @@ p {
     margin:0;
     float:none;
 }
+
 .nav-center a {
 	color: white !important;
 	font-family: 'Indie Flower', cursive;
@@ -90,9 +91,11 @@ p {
 .navbar-inner{
   text-align:center;
 }
+
 #coderita_navbar {
 	margin-top: 10px !important;
 }
+
 #coderita_link:after {
 	content: url('/images/Parrot.png');
 	vertical-align: -50%;
