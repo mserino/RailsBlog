@@ -1,6 +1,6 @@
-<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-	<ul class="nav navbar-nav">
-		<li><%= link_to "Home", root_path %></li>
+<nav class="collapse navbar-collapse bs-navbar-collapse navbar-inner" role="navigation">
+	<ul class="nav navbar-nav nav-center" id="coderita_navbar">
+		<li><span  id="coderita_link"><%= link_to "Coderita", root_path%></span></li>
 	</ul>
   <ul class="nav navbar-nav navbar-right">
 		<% if user_signed_in? %>
