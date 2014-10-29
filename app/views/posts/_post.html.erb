@@ -1,5 +1,7 @@
-<article>
-    <h2><a href="#"><%= post.title %></a></h2>
+<article class="post_section">
+    <h2>
+    <%= link_to "#{post.title}", post_path(post) %>
+    </h2>
  		<div class="row">
 
  			<%= render 'posts/partials/postedby', post: post %>

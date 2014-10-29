@@ -18,8 +18,10 @@
 
 /* FONTS */
 
-.jumbotron h1 {
+.jumbotron h1 a {
 	font-family: 'Indie Flower', cursive;
+	color: white;
+	text-decoration: none;
 }
 
 .jumbotron p {
