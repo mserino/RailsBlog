@@ -40,9 +40,8 @@ describe 'Adding posts' do
 		end
 
 		it 'cannot see the new post link' do
-			visit '/'
+			visit root_path
 			expect(page).not_to have_content "New post"
-			expect(page).to have_content "You need to be signed in to add new posts"
 		end
 	end
 

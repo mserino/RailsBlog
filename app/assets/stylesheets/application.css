@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+@media (min-width: 768px) { /* tablets and up */ 
+    .group2 {
+        text-align: right;
+    }
+}
+
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}

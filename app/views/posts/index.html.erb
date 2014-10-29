@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Posts</title>
-</head>
-<body>
-
-	<% if user_signed_in? %>
-		<h1><%= link_to "New post", new_post_path %></h1>
-	<% else %>
-		<p><strong>You need to be signed in to add new posts</strong></p>
-	<% end %>
-
-
-<% if @posts.any? %>
-	<% @posts.each do |post| %>
-		<h2><%= post.title %></h2>
-		<p><%= post.description %></p>
-		<p><strong>Posted by <%= post.user.name %></strong></p>
-		<p><%= link_to "Edit post", edit_post_path(post) %></p>
-		<p><%= link_to "Delete post", post_path(post), method: :delete, 'data-confirm' => "Are you sure you want to delete this post?" %></p>
-	<% end %>
-<% else %>
-	<h1>No posts yet</h1>
-<% end %>
-
-</body>
-</html>
+	<div class="row">
+    <div class="col-md-8">
+    	<%= render "posts" %>	
+    </div>
+    <div class="col-md-4">
+    	<%= render "sidebar" %>
+    </div>
+	</div>
