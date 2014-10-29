@@ -16,7 +16,11 @@
 
 @media (min-width: 768px) { /* tablets and up */ 
     .group2 {
-        text-align: right;
+      text-align: right;
+    }
+
+    .jumbotron {
+    	min-height: 300px;
     }
 }
 
@@ -24,4 +28,15 @@
     display: block;
     height: auto;
     max-width: 100%;
+}
+
+.navbar {
+	margin-bottom: 0 !important;
+}
+
+.jumbotron {
+	color: white !important;
+	/*background-color: green !important;*/
+	background-image: url('/images/bokeh.jpg') !important;
+	background-attachment: fixed;
 }
