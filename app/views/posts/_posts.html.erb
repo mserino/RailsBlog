@@ -1,34 +1,7 @@
 <% if @posts.any? %>
 	<h1>Latest posts</h1>
 	<% @posts.each do |post| %>
-		<article>
-		    <h2><a href="#"><%= post.title %></a></h2>
-		 		<div class="row">
-		 			<div class="group1 col-sm-6 col-md-6">
-		 				<span class="glyphicon glyphicon-user"></span> Posted by <%= post.user.name %>
-		 			</div>
-		 			<div class="group2 col-sm-6 col-md-6">
-		 				<span class="glyphicon glyphicon-edit"></span> <%= link_to "Edit post", edit_post_path(post) %>
-						<span class="glyphicon glyphicon-trash"></span> <%= link_to "Delete post", post_path(post), method: :delete, 'data-confirm' => "Are you sure you want to delete this post?" %>
-					</div>
-		 		</div>
-		    <div class="row">
-		      <div class="group1 col-sm-6 col-md-6">
-						<span class="glyphicon glyphicon-time"></span> <%= post.created_at.strftime("%A %d %B %Y %H:%M") %>
-		      </div>
-
-		      <div class="group2 col-sm-6 col-md-6">
-						<span class="glyphicon glyphicon-bookmark"></span> <a href="#">Tags</a>, 
-		        <a href="#">Tags</a>, <a href="#">Tags</a>
-		        <span class="glyphicon glyphicon-pencil"></span> <a href="singlepost.html#comments">20 Comments</a>                             
-		      </div>
-		    </div>
-		  
-		    <hr>
-		 
-		    <p class="blogpost"><%= post.description %></p> 
-		    <hr>
-		</article>
+		<%= render 'post', post: post %>
 	<% end %>
 
 	<ul class="pager"> 

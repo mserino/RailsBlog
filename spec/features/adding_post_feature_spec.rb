@@ -11,6 +11,7 @@ describe 'Adding posts' do
 
 	it 'can show posts' do
 		post = jack.posts.create title: "Title of the post", description: "Description of the post"
+		login_as jack
 		visit posts_path
 		expect(page).to have_content "Title of the post"
 		expect(page).to have_content "Description of the post"

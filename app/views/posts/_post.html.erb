@@ -1,0 +1,16 @@
+<article>
+    <h2><a href="#"><%= post.title %></a></h2>
+ 		<div class="row">
+
+ 			<%= render 'posts/partials/postedby', post: post %>
+
+ 			<%= render 'posts/partials/editdelete', post: post %>
+
+ 		</div>
+    <div class="row">
+    	<%= render 'posts/partials/createdat', post: post %>
+    	<%= render 'posts/partials/tagscomments', post: post %>
+    </div>
+  
+    <%= render 'posts/partials/description', post: post %>
+</article>
