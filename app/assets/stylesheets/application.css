@@ -14,6 +14,31 @@
  *= require_self
  */
 
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display|Josefin+Sans|Bitter|Lobster|Droid+Serif|Indie+Flower|Inconsolata|Vollkorn|Quattrocento+Sans);
+
+/* FONTS */
+
+.jumbotron h1 {
+	font-family: 'Indie Flower', cursive;
+}
+
+.jumbotron p {
+	font-family: 'Quattrocento Sans', sans-serif;
+}
+
+body {
+	font-family: 'Quattrocento Sans', sans-serif !important;
+}
+
+p {
+	font-family: 'Vollkorn', serif; !important;
+}
+
+.blogpost {
+	font-size: 1.2em;
+}
+/* END FONTS */
+
 @media (min-width: 768px) { /* tablets and up */ 
     .group2 {
       text-align: right;
@@ -39,4 +64,5 @@
 	/*background-color: green !important;*/
 	background-image: url('/images/bokeh.jpg') !important;
 	background-attachment: fixed;
+	background-size: cover;
 }
