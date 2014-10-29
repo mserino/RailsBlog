@@ -2,24 +2,26 @@ require 'rails_helper'
 
 describe 'Adding posts' do
 
+	let(:jack) { create(:user)}
+
 	it 'has no posts' do
 		visit posts_path
 		expect(page).to have_content "No posts yet"
 	end
+
 	it 'can show posts' do
-		post = Post.create title: "Title of the post", description: "Description of the post"
+		post = jack.posts.create title: "Title of the post", description: "Description of the post"
 		visit posts_path
 		expect(page).to have_content "Title of the post"
 		expect(page).to have_content "Description of the post"
 	end
 
 	context 'logged in' do
-
-		let(:jack) { create(:user)}
+		
 		before do
 			login_as jack
 		end
-		
+
 		it 'can add a post' do
 			visit new_post_path
 			fill_in "Title", with: "New post"
@@ -35,6 +37,12 @@ describe 'Adding posts' do
 		it 'cannot add a post' do
 			visit new_post_path
 			expect(page).to have_content "You need to sign in or sign up before continuing."
+		end
+
+		it 'cannot see the new post link' do
+			visit '/'
+			expect(page).not_to have_content "New post"
+			expect(page).to have_content "You need to be signed in to add new posts"
 		end
 	end
 

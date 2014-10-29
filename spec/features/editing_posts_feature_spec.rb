@@ -5,7 +5,7 @@ describe 'Editing posts' do
 
 	before do
 		login_as jack
-		@post = Post.create title: 'First post', description: "Yay"
+		@post = jack.posts.create title: 'First post', description: "Yay"
 	end
 
 	it 'can edit a post' do
