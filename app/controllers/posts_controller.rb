@@ -6,12 +6,16 @@ class PostsController < ApplicationController
 		@posts = Post.paginate(:page => params[:page], :per_page => 5).order(created_at: :desc)
 		@last_posts = @posts.first(5)
 		@comment = Comment.new
+		@comments = Comment.all
+		@last_comments = @comments.last(5)
 	end
 
 	def show
 		@posts = Post.all.order(created_at: :desc)
 		@last_posts = @posts.first(5)
 		@post = Post.find params[:id]
+		@comments = Comment.all
+		@last_comments = @comments.last(5)
 	end
 
 	def new

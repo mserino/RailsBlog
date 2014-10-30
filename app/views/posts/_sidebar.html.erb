@@ -25,3 +25,23 @@
   	<p class='lead'>No posts yet</p>
   <% end %>
 </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Latest comments</h4>
+  </div>
+  <% if @comments.any? %>
+    <ul class="list-group">
+      <% @last_comments.each do |comment| %>
+        <li class="list-group-item">
+          <span>"<%= comment.body %>"</span><br>
+          <span><em><%= comment.name %> in <%= link_to "#{comment.post.title}", post_path(comment.post.id) %></em></span>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <ul class="list-group">
+      <li class="list-group-item">No comments yet</li>
+    </ul>
+  <% end %>
+</div>
