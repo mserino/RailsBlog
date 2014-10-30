@@ -1,20 +1,24 @@
 <article class="post_section">
-    <h2>
-    <%= link_to "#{post.title}", post_path(post) %>
-    </h2>
- 		<div class="row">
+  <h2>
+  <%= link_to "#{post.title}", post_path(post) %>
+  </h2>
 
- 			<%= render 'posts/partials/postedby', post: post %>
+  <div class="row">
+    <%= render 'posts/partials/postedby', post: post %>
+    <%= render 'posts/partials/editdelete', post: post %>
+  </div>
 
- 			<%= render 'posts/partials/editdelete', post: post %>
+  <div class="row">
+    <%= render 'posts/partials/createdat', post: post %>
+    <%= render 'posts/partials/tags', post: post %>
+  </div>
 
- 		</div>
-    <div class="row">
-    	<%= render 'posts/partials/createdat', post: post %>
-    	<%= render 'posts/partials/tagscomments', post: post %>
-    </div>
-  
-    <div class="description">
-    	<%= render 'posts/partials/description', post: post %>
-    </div>
+  <div class="description">
+  <%= render 'posts/partials/description', post: post %>
+  </div>
+
+  <div class="row">
+    <%= render 'comments/comment', post: post %>
+  </div>
+
 </article>

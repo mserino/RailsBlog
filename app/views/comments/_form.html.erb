@@ -1,46 +1,21 @@
-<div class="well comments">
-	<div class="clearfix">
-		<h4>Leave a comment</h4>
-	  <%= form_for [post, @comment] do |f| %>
-			<div class="col-md-6 form-group">
-				<%= f.label :name %>
-				<%= f.text_field :name, class: 'form-control', id: 'name' %>
-			</div>
-	 
-			<div class="col-md-6 form-group">
-				<%= f.label :email %>
-				<%= f.text_field :email, class: 'form-control', id: 'email' %>
-			</div>
-	 
-			<div class="col-md-12 form-group">
-				<%= f.label :body, "Leave your comment" %>
-				<%= f.text_field :body, class: 'form-control', id: 'comment' %>
-			</div>
-			<div class="col-md-12 form-group text-right">
-				<%= f.submit "Submit", class: 'btn btn-primary' %>
-			</div>
-	  <% end %>
+<div class="col-md-12 col-sm-12 text-center">
+<%= form_for [@post, @comment] do |form| %>
+	<div>
+	<%= form.label :name %><br />
+	<%= form.text_field :name %>
 	</div>
-<% if post.comments.any? %>
-	<div class="clearfix">
-		<h4>Recent comments</h4>
-			<ul id="comments" class="comments">
-				<% post.comments.each do |comment| %>
-			    <li class="comment">
-			        <div class="clearfix">
-			            <h4 class="pull-left"><%= comment.name %> <small>(<%= comment.email %>)</small></h4>
-			            <p class="pull-right"><%= comment.created_at.strftime("%A %d %B %Y %H:%M") %></p>
-			        </div>
-			        <p><em><%= comment.body %></em></p>
-			    </li>
-				<% end %>
-			</ul>
+	<div>
+	<%= form.label :email %><br />
+	<%= form.text_field :email %>
 	</div>
-<% else %>
-	<p>No comments yet</p>
+	<div>
+	<%= form.label :body, "Leave your comment" %><br />
+	<%= form.text_area :body %>
+	</div>
+	
+<br>
+
+	<div><%= form.submit "Submit" %></div>
+
 <% end %>
-
-<button type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
-
-
 </div>

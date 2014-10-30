@@ -1,0 +1,24 @@
+<div class="col-sm-12 col-md-12">
+  <p><span class="glyphicon glyphicon-pencil"></span>
+  <%= post.comments.length %> comments</p>
+  <%= link_to "Leave a comment", new_post_comment_path(post), class: 'btn btn-default leavecomment' %>
+  <div>
+    <% if post.comments.any? %>
+      <div class="clearfix">
+        <ul id="comments" class="comments">
+          <% post.comments.each do |comment| %>
+            <li class="comment">
+              <div class="clearfix">
+                <h5>
+                <%= comment.name %>
+                <small>(<%= comment.email %>)</small>
+                <small><%= comment.created_at.strftime("%d %B %Y %H:%M") %></small></h5>
+                <%= comment.body %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
