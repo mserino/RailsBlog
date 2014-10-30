@@ -121,3 +121,13 @@ p {
 	content: "\e092";
 	margin-left: 8px;
 }
+
+/* Comments form and comments */
+#comments, #comments li {
+    margin: 0;
+    padding: 0;
+}
+ 
+#comments li {
+    list-style: none;
+}
