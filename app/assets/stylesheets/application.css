@@ -39,6 +39,14 @@ p {
 .blogpost {
 	font-size: 1.2em;
 }
+
+.comment-author{
+	color: #428bca;
+}
+
+.comment-date {
+	color: lightgray;
+}
 /* END FONTS */
 
 @media (min-width: 768px) { /* tablets and up */ 

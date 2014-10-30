@@ -1,7 +1,9 @@
 <div class="col-sm-12 col-md-12">
-  <p><span class="glyphicon glyphicon-pencil"></span>
-  <%= post.comments.length %> comments</p>
-  <%= link_to "Leave a comment", new_post_comment_path(post), class: 'btn btn-default leavecomment' %>
+  <p>
+  <span class="glyphicon glyphicon-comment"></span> <%= post.comments.length %> comments &nbsp;
+  <%= link_to "Leave a comment", new_post_comment_path(post), class: 'btn btn-sm btn-default leavecomment' %>
+  </p>
+
   <div>
     <% if post.comments.any? %>
       <div class="clearfix">
@@ -9,16 +11,14 @@
           <% post.comments.each do |comment| %>
             <li class="comment">
               <div class="clearfix">
-                <h5>
-                <%= comment.name %>
-                <small>(<%= comment.email %>)</small>
-                <small><%= comment.created_at.strftime("%d %B %Y %H:%M") %></small>
+                <span class="comment-author"><%= comment.name %> says</span>: <%= comment.body %>
+                
+                <small class="comment-date"><%= comment.created_at.strftime("%d %B %Y %H:%M") %></small>
+
                 <% if owner_of(post) %>
                   <small><%= link_to "Edit this comment", edit_post_comment_path(post.id, comment) %></small>
                   <small><%= link_to "Delete this comment", post_comment_path(post.id, comment), method: :delete, 'data-confirm' => "Are you sure you want to delete this post?" %></small>
                 <% end %>
-                </h5>
-                <%= comment.body %>
               </div>
             </li>
           <% end %>
@@ -26,4 +26,5 @@
       </div>
     <% end %>
   </div>
+
 </div>
