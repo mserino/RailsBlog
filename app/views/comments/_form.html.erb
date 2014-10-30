@@ -1,5 +1,5 @@
 <div class="col-md-12 col-sm-12 text-center">
-<%= form_for [@post, @comment] do |form| %>
+<%= form_for [@post, @comment], url: { action: action } do |form| %>
 	<div>
 	<%= form.label :name %><br />
 	<%= form.text_field :name %>
