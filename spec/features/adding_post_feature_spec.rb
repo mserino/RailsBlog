@@ -25,11 +25,12 @@ describe 'Adding posts' do
 
 		it 'can add a post' do
 			visit new_post_path
-			fill_in "Title", with: "New post"
-			fill_in "Description", with: "New description"
+			fill_in "Title", with: "This is so cool"
+			# fill_in "Description", with: "New description"
+			find('#summernote').set "New description"
 			click_button "Submit"
 			expect(current_path).to eq posts_path
-			expect(page).to have_content "New post"
+			expect(page).to have_content "This is so cool"
 			expect(page).to have_content "New description"
 		end
 	end
