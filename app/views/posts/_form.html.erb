@@ -5,9 +5,26 @@
 	</div>
 	<div>
 	<%= form.label :description %><br />
-	<%= form.text_area :description %>
+	<%= form.text_area :description, id: "summernote" %>
 	</div>
+	
+<br>
 
 	<div><%= form.submit "Submit" %></div>
 
 <% end %>
+
+
+<script>
+	$(document).ready(function() {
+	  $('#summernote').summernote({
+		  height: 300,                 // set editor height
+
+		  minHeight: null,             // set minimum height of editor
+		  maxHeight: null,             // set maximum height of editor
+
+		  focus: true,                 // set focus to editable area after initializing summernote
+		});
+	});
+
+</script>
