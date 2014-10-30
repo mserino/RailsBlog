@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# Pagination gem
+## Gemfile for Rails 3+, Sinatra, or Merb
+gem 'will_paginate', '~> 3.0.5'
+
+# Devise
 gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

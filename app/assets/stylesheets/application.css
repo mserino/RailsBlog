@@ -70,6 +70,7 @@ p {
 .navbar-text {
 	color: white !important;
 }
+
 /* Header on scrolling 200px */
 .navbar {
 	margin-bottom: 0 !important;
@@ -105,4 +106,18 @@ p {
 #coderita_link:after {
 	content: url('/images/Parrot.png');
 	vertical-align: -50%;
+}
+
+/* Previous and Next pagination */
+
+.pagination-previous:before {
+	font-family: 'Glyphicons Halflings';
+	content: "\e091";
+	margin-right: 8px;
+}
+
+.pagination-next:after {
+	font-family: 'Glyphicons Halflings';
+	content: "\e092";
+	margin-left: 8px;
 }

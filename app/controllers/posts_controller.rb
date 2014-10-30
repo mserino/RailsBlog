@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 	
 	def index
 		@posts = Post.all.order(created_at: :desc)
+		@posts = Post.paginate(:page => params[:page], :per_page => 5).order(created_at: :desc)
 		@last_posts = @posts.first(5)
 	end
 

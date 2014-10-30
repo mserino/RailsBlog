@@ -2,17 +2,20 @@
 	<h1>Latest posts</h1>
 	<% @posts.each do |post| %>
 		<%= render 'post', post: post %>
+
 	<% end %>
 
-	<ul class="pager"> 
-    <li class="previous">
-        <a href="#">← Older</a>
-    </li> 
-    <li class="next">
-        <a href="#">Newer →</a>
-    </li> 
-	</ul>
+<nav>
+  <ul class="pager">
+<!--     <li><a href="#"><span class="pagination-previous">Previous</span></a></li>
+    <li><a href="#"><span class="pagination-next">Next</span></a></li> -->
+		<%= will_paginate @posts, :page_links => false %>
+  </ul>
+</nav>
+
 
 <% else %>
 	<h1>No posts yet</h1>
 <% end %>
+
+
