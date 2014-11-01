@@ -77,8 +77,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   # devise mailer configuration
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
   config.action_mailer.default_url_options = { :host => 'http://www.heroku.com' }
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.sendgrid.net",
