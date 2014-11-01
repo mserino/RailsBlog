@@ -14,7 +14,9 @@
   </div>
 
   <div class="description">
-  <%= image_tag post.image.url, class: 'uploaded-pic' %>
+  <% if post.image.present? %>
+    <%= image_tag post.image.url(:medium), class: 'uploaded-pic' %>
+  <% end %>
   <%= render 'posts/partials/description', post: post %>
   </div>
 

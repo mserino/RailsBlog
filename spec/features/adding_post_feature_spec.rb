@@ -43,6 +43,15 @@ describe 'Adding posts' do
 			click_button "Submit"
 			expect(page).to have_css 'img.uploaded-pic'
 		end
+
+		it 'not attaching any image' do
+			visit posts_path
+			click_link "New post"
+			fill_in "Title", with: "Blog post"
+			find('#summernote').set "New description"
+			click_button "Submit"
+			expect(page).not_to have_css 'img.uploaded-pic'
+		end
 	end
 
 	context 'logged out' do

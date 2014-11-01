@@ -45,6 +45,8 @@ class PostsController < ApplicationController
 
 	def destroy
 		@post = Post.find params[:id]
+		@comments = @post.comments
+		@comments.each{|comment| comment.delete}
 		@post.destroy
 		flash[:notice] = "Post successfully deleted"
 		redirect_to posts_path
