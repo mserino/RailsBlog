@@ -78,4 +78,15 @@ Rails.application.configure do
   
   # devise mailer configuration
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.default_url_options = { :host => 'http://www.heroku.com' }
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :port           => "25",
+    :authentication => :plain,
+    :user_name      => Rails.application.secrets.sendgrid_username,
+    :password       => Rails.application.secrets.sendgrid_password,
+    :domain         => Rails.application.secrets.sendgrid_domain
+  }
+
 end
