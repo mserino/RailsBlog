@@ -1,7 +1,11 @@
-<%= form_for @post, url: { action: action } do |form| %>
+<%= form_for @post, url: { action: action }, html: {multipart: true} do |form| %>
 	<div>
 	<%= form.label :title %><br />
 	<%= form.text_field :title %>
+	</div>
+	<div>
+		<%= form.label :image, "Upload your image" %>
+		<%= form.file_field :image %>
 	</div>
 	<div>
 	<%= form.label :description %><br />
@@ -17,14 +21,11 @@
 
 <script>
 	$(document).ready(function() {
-	  $('#summernote').summernote({
-		  height: 300,                 // set editor height
-
-		  minHeight: null,             // set minimum height of editor
-		  maxHeight: null,             // set maximum height of editor
-
-		  focus: true,                 // set focus to editable area after initializing summernote
-		});
+	    $('#summernote').summernote({
+	        height: "500px",
+	        onImageUpload: function(files, editor, welEditable) {
+	            sendFile(files[0],editor,welEditable);
+	        }
+	    });
 	});
-
 </script>

@@ -33,6 +33,16 @@ describe 'Adding posts' do
 			expect(page).to have_content "This is so cool"
 			expect(page).to have_content "New description"
 		end
+
+		it 'can attach image to a post' do
+			visit posts_path
+			click_link "New post"
+			fill_in "Title", with: "Blog post"
+			find('#summernote').set "New description"
+			attach_file "Upload your image", Rails.root.join('spec/images/carlina.jpg')
+			click_button "Submit"
+			expect(page).to have_css 'img.uploaded-pic'
+		end
 	end
 
 	context 'logged out' do

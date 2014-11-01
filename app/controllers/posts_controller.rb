@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 		@comment = Comment.new
 		@comments = Comment.all
 		@last_comments = @comments.last(5)
+		@post_months = @posts.group_by{|t| t.created_at.beginning_of_month}
 	end
 
 	def show
@@ -16,6 +17,7 @@ class PostsController < ApplicationController
 		@post = Post.find params[:id]
 		@comments = Comment.all
 		@last_comments = @comments.last(5)
+		@post_months = @posts.group_by{|t| t.created_at.beginning_of_month}
 	end
 
 	def new
@@ -49,6 +51,15 @@ class PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :description)		
+		params.require(:post).permit(:title, :description, :image)		
+	end
+
+	def add_image
+    @file = params[:file].tempfile
+    s3 = AWS::S3.new
+    random = SecureRandom.hex
+    image = s3.buckets['megblog'].objects.create("#{random}.jpg", @file)
+
+    render(json: image.public_url)
 	end
 end

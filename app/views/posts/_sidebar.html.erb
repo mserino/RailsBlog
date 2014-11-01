@@ -26,6 +26,7 @@
   <% end %>
 </div>
 
+<!-- Latest comments -->
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4>Latest comments</h4>
@@ -45,3 +46,25 @@
     </ul>
   <% end %>
 </div>
+
+<!-- Archive -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Archive</h4>
+  </div>
+  <% @post_months.sort.reverse.each do |month, posts| %>
+    <ul class="list-group archive-posts">
+      <li class="list-group-item archive-month"><%=h month.strftime("%B %Y") %></p>
+      <% for post in posts %>
+      <li class="list-group-item archive-post"><small><%=h link_to post.title %></small></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $('li.archive-post').hide();
+  $('li.archive-month').click(function(){
+    $('li.archive-post').slideToggle();
+  });
+</script>

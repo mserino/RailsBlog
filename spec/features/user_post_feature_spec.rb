@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'User and Post' do
+
 	let(:cindy) { create(:user) }
 	let(:jack) {create(:jack)}
 
