@@ -159,5 +159,8 @@ p {
 }
 
 #tag_cloud .s { font-size: 0.8em !important; }
+#tag_cloud .s:before { content: '#';}
 #tag_cloud .m { font-size: 1.2em !important; }
+#tag_cloud .m:before { content: '#';}
 #tag_cloud .l { font-size: 1.8em !important; }
+#tag_cloud .l:before { content: '#';}
