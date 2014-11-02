@@ -63,6 +63,4 @@ end
 
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
-group :production do
-	gem 'rails_12factor'
-end
+gem 'rails_12factor', group: :production
