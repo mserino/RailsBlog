@@ -61,7 +61,8 @@ group :test, :development do
 	gem 'factory_girl_rails'
 end
 
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+
 group :production do
 	gem 'rails_12factor'
-	gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 end

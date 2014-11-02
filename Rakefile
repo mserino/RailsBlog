@@ -4,3 +4,5 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+S3_SECRET_KEY='12345' S3_ACCESS_KEY="12345"
