@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Tags gem
+gem 'acts-as-taggable-on', '~> 3.4'
+
 # https://github.com/huacnlee/social-share-button
 gem 'social-share-button'
 

@@ -11,4 +11,6 @@ class Post < ActiveRecord::Base
 											secret_access_key: ENV['S3_SECRET_KEY']
 										}
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
+  acts_as_taggable
 end

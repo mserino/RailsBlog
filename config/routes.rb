@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   root to: "posts#index"
 
-  post "posts" => "posts#new"
+  get 'tags/:tag', to: 'posts#index', as: :tag
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

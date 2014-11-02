@@ -150,3 +150,14 @@ p {
 .archive-month:hover{
 	text-decoration: underline;
 };
+
+/* Tags */
+
+#tag_cloud {
+  width: 400px !important;
+  line-height: 1.6em !important;
+}
+
+#tag_cloud .s { font-size: 0.8em !important; }
+#tag_cloud .m { font-size: 1.2em !important; }
+#tag_cloud .l { font-size: 1.8em !important; }

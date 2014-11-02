@@ -2,8 +2,11 @@ class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	
 	def index
-		@posts = Post.all.order(created_at: :desc)
-		@posts = Post.paginate(:page => params[:page], :per_page => 5).order(created_at: :desc)
+	  if params[:tag]
+	    @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 5).order(created_at: :desc)
+	  else
+			@posts = Post.all.paginate(:page => params[:page], :per_page => 5).order(created_at: :desc)
+	  end
 		@last_posts = @posts.first(5)
 		@comment = Comment.new
 		@comments = Comment.all
@@ -53,15 +56,6 @@ class PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :description, :image)		
-	end
-
-	def add_image
-    @file = params[:file].tempfile
-    s3 = AWS::S3.new
-    random = SecureRandom.hex
-    image = s3.buckets['megblog'].objects.create("#{random}.jpg", @file)
-
-    render(json: image.public_url)
+		params.require(:post).permit(:title, :description, :image, :tag_list)		
 	end
 end

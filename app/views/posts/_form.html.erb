@@ -8,6 +8,10 @@
 		<%= form.file_field :image %>
 	</div>
 	<div>
+		<%= form.label :tag_list, "Tags (separated by commas)" %><br />
+  	<%= form.text_field :tag_list %>
+	</div>
+	<div>
 	<%= form.label :description %><br />
 	<%= form.text_area :description, id: "summernote" %>
 	</div>
