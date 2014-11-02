@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
 
 	has_attached_file :image, styles: { medium: '400x400>'},
 										storage: :s3,
+										s3_protocol:'https',
 										s3_credentials: {
 											bucket: 'megblog',
 											access_key_id: ENV['S3_ACCESS_KEY'],
