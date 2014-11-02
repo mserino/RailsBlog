@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# Tags gem
+# Tags gem https://github.com/mbleigh/acts-as-taggable-on
 gem 'acts-as-taggable-on', '~> 3.4'
 
 # https://github.com/huacnlee/social-share-button
