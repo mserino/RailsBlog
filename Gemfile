@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# https://github.com/huacnlee/social-share-button
+gem 'social-share-button'
+
 # Pagination gem
 ## Gemfile for Rails 3+, Sinatra, or Merb
 gem 'will_paginate', '~> 3.0.5'
