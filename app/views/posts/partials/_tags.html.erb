@@ -1,4 +1,4 @@
 <div class="group2 col-sm-6 col-md-6 tags">
-	<span class="glyphicon glyphicon-bookmark"></span>
+	<span class="glyphicon glyphicon-tag"></span>
 	Tags: <%= raw post.tag_list.map { |t, tag| link_to t, tag_path(t), class: 'tag' }.join(', ') %>
 </div>
