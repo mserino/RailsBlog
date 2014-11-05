@@ -3,9 +3,10 @@
 <head>
   <title>Coderita</title>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'summernote-bs3', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'flag-icon.min', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'summernote.min', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,13 +14,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 
 </head>
 <body>
 
-<header class="navbar navbar-default bs-docs-nav navbar-fixed-top" role="banner">              
-  <div class="container"> 
+<header class="navbar navbar-default bs-docs-nav navbar-fixed-top" role="banner">
+  <div class="container">
     <%= render 'layouts/partials/togglenavigation' %>
     <%= render 'layouts/partials/usersession' %>
   </div>

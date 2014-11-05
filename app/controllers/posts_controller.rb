@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
-	
+
 	def index
 	  if params[:tag]
 	    @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 5).order(created_at: :desc)
@@ -56,6 +56,6 @@ class PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :description, :image, :tag_list)		
+		params.require(:post).permit(:title, :description, :image, :tag_list, :italiandescription)		
 	end
 end

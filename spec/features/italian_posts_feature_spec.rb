@@ -13,5 +13,8 @@ describe 'Italian field' do
     find('#summernote').set "Very nice movie"
     find('#summernote-ita').set "Molto carino come film"
     click_button "Submit"
+    expect(page).not_to have_content "Molto carino come film"
+    find('.italian-version').click
+    expect(page).to have_content "Molto carino come film"
   end
 end
