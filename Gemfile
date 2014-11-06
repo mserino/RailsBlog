@@ -62,6 +62,7 @@ group :test, :development do
 	gem 'capybara'
 	gem 'launchy'
 	gem 'factory_girl_rails'
+	gem 'poltergeist'
 end
 
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'

@@ -163,3 +163,9 @@ p {
 #tag_cloud .m:before { content: '#';}
 #tag_cloud .l { font-size: 1.8em !important; }
 #tag_cloud .l:before { content: '#';}
+
+/* Flag */
+
+.myFlag {
+	cursor: pointer;
+}

@@ -6,34 +6,3 @@
   	<%= render "sidebar" %>
   </div>
 </div>
-
-<script>
-$(document).ready(function(){
-	var flag = $('.italianVersion');
-	// var blogpost = $('.blogpost');
-	var blogpostItalian = $('.blogpostItalian')
-
-	blogpostItalian.hide();
-
-	flag.on('click', function(){
-		var blogpost = $(this).closest('.post_section').find('.blogpost')
-		var italian = $(this).closest('.post_section').find('.blogpostItalian')
-
-		if(blogpost.css('display')!='none'){
-			italian.show();
-			blogpost.hide();
-		}else if(italian.css('display')!='none'){
-			blogpost.show();
-			italian.hide();
-		}
-	})
-
-})
-	// $('#btnClick').on('click',function(){
-	//     if($('#1').css('display')!='none'){
-	//     $('#2').html('Here is my dynamic content').show().siblings('div').hide();
-	//     }else if($('#2').css('display')!='none'){
-	//         $('#1').show().siblings('div').hide();
-	//     }
-	// });
-</script>
