@@ -2,11 +2,6 @@
   <h2>
   <%= link_to "#{post.title}", post_path(post) %>
   </h2>
-    <p>
-    <span class="label label-primary">
-      <span class="flag flag-icon flag-icon-it"></span>
-    </span>
-    </p>
 
   <div class="row">
     <%= render 'posts/partials/postedby', post: post %>
@@ -24,9 +19,10 @@
   </div>
 
   <div class="row">
-    <%= render '/posts/partials/like', post: post %>
-    <%= render 'posts/partials/share', post: post %>
+    <%= render 'posts/partials/like', post: post %>
+    <%= render 'posts/partials/italianversion', post: post %>
     <%= render 'comments/comment', post: post %>
+    <%= render 'posts/partials/share', post: post %>
   </div>
 
 </article>
