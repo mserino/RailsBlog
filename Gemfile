@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# Twitter integration
-gem 'twitter'
-
 # Tags gem https://github.com/mbleigh/acts-as-taggable-on
 gem 'acts-as-taggable-on', '~> 3.4'
 
