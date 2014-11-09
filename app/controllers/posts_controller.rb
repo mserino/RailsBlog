@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 	  else
 			@posts = Post.all.paginate(:page => params[:page], :per_page => 5).order(created_at: :desc)
 	  end
+
 		@last_posts = @posts.first(5)
 		@comment = Comment.new
 		@comments = Comment.all
