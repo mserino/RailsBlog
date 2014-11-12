@@ -1,40 +1,64 @@
 <%= form_for @post, url: { action: action }, html: {multipart: true} do |form| %>
-	<div>
-	<%= form.label :title %><br />
-	<%= form.text_field :title %>
-	</div>
-	<div>
-		<%= form.label :image, "Upload your image" %>
-		<%= form.file_field :image %>
-	</div>
-	<div>
-		<%= form.label :tag_list, "Tags (separated by commas)" %><br />
-  	<%= form.text_field :tag_list %>
-	</div>
-	<div>
-	<%= form.label :description %><br />
-	<%= form.text_area :description, id: "summernote" %>
-	</div>
+	<section class="form">
+		<div>
+			<%= form.label :title %><br />
+			<%= form.text_field :title %>
+		</div>
+		<div>
+				<%= form.label :image, "Upload your image" %>
+				<%= form.file_field :image %>
+		</div>
+		<div>
+				<%= form.label :tag_list, "Tags (separated by commas)" %><br />
+		  	<%= form.text_field :tag_list %>
+		</div>
+		<div>
+			<%= form.label :description %><br />
+			<%= form.text_area :description, id: "summernote" %>
+		</div>
+		<br />
 
-	<div>
-	<%= form.label :italiandescription, "Italian version" %><br />
-	<%= form.text_area :italiandescription, id: "summernote-ita" %>
-	</div>
+		<div><%= form.submit "Submit" %></div>
+		<br>
+		<p class="btn btn-primary" id="addita">Add italian version</p>
+		<br>
 
-<br>
-
-	<div><%= form.submit "Submit" %></div>
-
+		<!-- hidden -->
+		<div id="versionita">
+			<%= form.label :italiandescription, "Italian version" %><br />
+			<%= form.text_area :italiandescription, id: "summernote-ita" %>
+			<br />
+			<p class="btn btn-danger" id="rmita">Remove italian version</p>
+		</div>
+		
+	</section>
 <% end %>
 
 
 <script>
 	$(document).ready(function() {
-	    $('#summernote, #summernote-ita').summernote({
-	        height: "500px",
-	        onImageUpload: function(files, editor, welEditable) {
-	            sendFile(files[0],editor,welEditable);
-	        }
-	    });
+    $('#summernote').summernote({
+        height: "300px"
+    });
+
+    $('#versionita').hide();
+
+    $('#addita').on('click', function(){
+    	$('#versionita').show();
+    	$('#summernote-ita').summernote({
+    		height: "300px"
+    	});
+    	$(this).hide();
+    });
+
+    $('#rmita').on('click', function(){
+    	conf = confirm("Are you sure?");
+    	if(conf===true) {
+    		$('#summernote-ita').destroy().val("");
+    		$('#versionita').hide();
+    		$('#addita').show();
+    	};
+    });
+
 	});
 </script>
