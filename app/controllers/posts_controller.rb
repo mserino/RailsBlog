@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	include ActionView::Helpers::TextHelper
+	
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index

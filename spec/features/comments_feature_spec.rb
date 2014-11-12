@@ -23,7 +23,7 @@ describe 'Comments' do
 
 			it 'can add one comment' do
 				expect(current_path).to eq posts_path
-				expect(page).to have_content "1 comments"
+				expect(page).to have_content "1 comment"
 			end
 
 			it 'can show the comment' do
