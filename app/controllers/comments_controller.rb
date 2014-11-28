@@ -6,9 +6,13 @@ class CommentsController < ApplicationController
 
 	def create
 		@post = Post.find params[:post_id]
-		@comment = @post.comments.create comment_params
-		flash[:notice] = "Thank you for your comment"
-		redirect_to posts_path
+		@comment = @post.comments.new comment_params
+		if @comment.save
+			flash[:notice] = "Thank you for your comment"
+			redirect_to posts_path
+		else
+			render 'new'
+		end
 	end
 
 	def edit

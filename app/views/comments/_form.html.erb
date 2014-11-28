@@ -1,15 +1,19 @@
 <div class="col-md-12 col-sm-12 text-center">
 <%= form_for [@post, @comment], url: { action: action } do |form| %>
+  <% if @comment.errors.any? %>  
+		<%= render 'posts/partials/formerrors', element: @comment %> 
+  <% end %> 
+
 	<div>
-	<%= form.label :name %><br />
+	<%= form.label :name %><br>(required)<br />
 	<%= form.text_field :name %>
 	</div>
 	<div>
-	<%= form.label :email %><br />
+	<%= form.label :email %><br>(required - will not be published)<br />
 	<%= form.text_field :email %>
 	</div>
 	<div>
-	<%= form.label :body, "Leave your comment" %><br />
+	<%= form.label :body, "Leave your comment" %>(required)<br />
 	<%= form.text_area :body %>
 	</div>
 	

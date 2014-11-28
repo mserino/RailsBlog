@@ -10,6 +10,7 @@ describe 'Post and comments' do
 		click_link "Leave a comment"
 		fill_in "Name", with: "Maggie"
 		fill_in "Email", with: "email@test.com"
+		fill_in "Leave your comment", with: "Yeah I love it"
 		click_button "Submit"
 	end
 	
