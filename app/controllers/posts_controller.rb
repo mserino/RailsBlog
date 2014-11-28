@@ -12,18 +12,18 @@ class PostsController < ApplicationController
 
 		@last_posts = @posts.first(5)
 		@comment = Comment.new
-		@comments = Comment.all
+		@comments = Comment.all.order(created_at: :desc)
 		@last_comments = @comments.last(5)
-		@post_months = @posts.group_by{|t| t.created_at.beginning_of_month}
+		@post_months = Post.all.group_by{|t| t.created_at.beginning_of_month}
 	end
 
 	def show
 		@posts = Post.all.order(created_at: :desc)
 		@last_posts = @posts.first(5)
 		@post = Post.find params[:id]
-		@comments = Comment.all
+		@comments = Comment.all.order(created_at: :desc)
 		@last_comments = @comments.last(5)
-		@post_months = @posts.group_by{|t| t.created_at.beginning_of_month}
+		@post_months = Post.all.group_by{|t| t.created_at.beginning_of_month}
 	end
 
 	def new
